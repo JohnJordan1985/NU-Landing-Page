@@ -1,0 +1,448 @@
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.eot');
+	/*Extra declaration for IE9 Compat Modes*/
+	src: url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), /*IE6-IE8*/
+	url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.svg#svgFontName') format('svg'), /*Legacy iOS*/
+	url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.ttf') format('truetype'), /*Safari, Android, iOS */
+	url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.woff') format('woff'), /* Pretty Modern Broswers */
+	url('fonts/sourcesanspro-regular/sourcesanspro-regular-webfont.woff2') format('woff2');
+	/*Ultra Modern Broswers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.eot');
+	/*Extra declaration for IE9 Compat Modes*/
+	src: url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'), /*IE6-IE8*/
+	url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.svg#svgFontName') format('svg'), /*Legacy iOS*/
+	url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.ttf') format('truetype'), /*Safari, Android, iOS */
+	url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.woff') format('woff'), /* Pretty Modern Broswers */
+	url('fonts/sourcesanspro-bold/sourcesanspro-bold-webfont.woff2') format('woff2');
+	/*Ultra Modern Broswers */
+	font-weight: bold;
+	/*700 is the same as bold and that is what is downloaded from Google Fonts, along with the 400 weight for normal text*/
+	font-style: normal;
+}
+
+* {
+	/*border: 0.5px solid #555 ;*/
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: normal;
+	color: #353535;
+	background-color: #BBBBBB;
+	background: url(../img/body-background.png);
+}
+
+.container {
+	background-color: #FFFFFF;
+	line-height: 150%;
+}
+
+section, nav {
+	margin-bottom: 20px;
+	border-bottom: 5px solid #006cb2;
+}
+
+img {
+	/*To center images within their parent container*/
+	margin: 0 auto;
+}
+
+img.page-logo {
+	height: 75px;
+	z-index: 100;
+	position: relative;
+	top: 25px;
+	/*Want logo to appear on left-hand side of page, so overwrite previous declaration*/
+	margin: 0 5px;
+}
+
+header {
+	/* adds a background image to the header */
+	background: url(../img/header.png) no-repeat;
+	background-size: cover;
+	/* adds a minimum height to the header so it's not relying on the content inside it */
+	min-height: 400px;
+	padding: 50px 0px 50px 25px;
+	height: 100%;
+	color: #FFFFFF;
+	line-height: 1.5;
+	border-bottom: 5px solid #006cb2;
+	margin-bottom: 40px;
+}
+
+.header-overlay {
+	background-color: rgba(0, 108, 178, 0.75);
+	/*#006cb2;*/
+	padding-top: 25px;
+}
+
+#under-header {
+	/*Had to declare this here as well, as was being ignored within declaration on container class*/
+	line-height: 150%;
+}
+
+#big-sign-up {
+	/*Next two declarations forces the break to happen between words on small screens, rather than within words, where possible*/
+	white-space: normal !important;
+	word-wrap: break-word;
+	max-width: 100%;
+	margin: 25px;
+	border: 2px solid #FFFD10;
+	/*outline: #FFFD19;*/
+	background-color: #FFFD19;
+	color: #353535;
+	font-weight: bold;
+}
+
+#big-sign-up:hover {
+	color: #353535;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	box-shadow: 0px 2px 5px 0px #353535;
+}
+
+.modal {
+	display: none;
+}
+
+h1 {
+	font-family: 'Source Sans Pro';
+	font-weight: bold;
+}
+
+nav h2 {
+	color: #006CB2;
+	font-weight: bold;
+}
+
+nav ul {
+	list-style-type: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2em;
+	max-width: 100%;
+}
+
+
+/*To apply some spacing to div elements within nav element, as they
+piled up on top of one another*/
+
+nav div {
+	margin-bottom: 20px;
+}
+
+li {
+	border: 2px solid #006CB2;
+	max-width: 100%;
+}
+
+.nav-button {
+	/*To alter default Bootstrap class and provide styling*/
+	font-weight: bold;
+	font-size: 1em;
+	/*Give white border to these buttons to blend into list item element*/
+	border: 2px solid #006CB2;
+	/*Next two declarations prevents text content overflowing parent container on very small screens*/
+	white-space: normal !important;
+	word-wrap: break-word;
+	color: #006CB2;
+}
+
+
+/*
+The next two declarations are a hack designed
+to get the entire nav button item to change colour on hover,
+as the a element doesn't take up the full width of the list item.
+*/
+
+li:hover {
+	background-color: #006CB2;
+}
+
+li:hover .btn-outline {
+	background-color: #006CB2;
+	color: #FFFFFF;
+}
+
+
+/*
+The next two declarations create the desired toggle behaviour
+between styles when the user hovers over the nav button elements
+*/
+
+li .btn {
+	border: 2px solid #FFFFFF;
+}
+
+li:hover .btn {
+	background-color: #006CB2;
+	border: none;
+	color: #FFFFFF;
+}
+
+li a {
+	text-decoration: none;
+}
+
+
+/*Set min height for thumbnail descriptions, as diferent text
+lengths produced different heights*/
+
+.thumb-description {
+	min-height: 65px;
+}
+
+.learn-more {
+	border: 2px solid #006CB2;
+	width: 100%;
+	border: 2px solid #FFFFFF;
+}
+
+.btn-outline {
+	/*To alter default Bootstrap class*/
+	font-weight: bold;
+	font-size: 1em;
+	border: 1px solid #006CB2;
+	/*Next two declarations prevents text content overflowing parent container on very small screens*/
+	white-space: normal !important;
+	word-wrap: break-word;
+	color: #006CB2
+}
+
+.btn-outline:hover {
+	color: #FFFFFF;
+	background-color: #006CB2;
+	border: 1px solid #006CB2;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+.section-thumbnails {
+	/*max-height: 120px;*/
+}
+
+#video-container {
+	background-color: #006CB2;
+	color: #FFFFFF
+}
+
+.video-descriptor {
+	margin-top: 25px;
+}
+
+video {
+	margin: 20px 5px 10px 5px;
+	max-width: 100%;
+	height: auto;
+}
+
+h3 {
+	color: #006CB2;
+}
+
+.caption {
+	max-width: 100%;
+	/*To ensure consistent height rather than let content determine
+	dimensions*/
+	min-height: 115px;
+	bottom: .3rem;
+	position: absolute;
+	background-color: rgba(0, 108, 178, 0.75);
+	color: #FFFFFF;
+}
+
+.small-sign-up {
+	/*Next two declarations forces the break to happen between words on small screens, rather than within words, where possible*/
+	white-space: normal !important;
+	word-wrap: break-word;
+	max-width: 100%;
+	margin: 25px;
+	border: 2px solid #FFFD19;
+	/*outline: #FFFD19;*/
+	background-color: transparent;
+	color: #353535;
+	font-weight: bold;
+}
+
+.small-sign-up:hover {
+	color: #353535;
+	background-color: #FFFD19;
+}
+
+.panel-heading {
+	background-color: #006CB2;
+	color: #FFFFFF;
+}
+
+.panel-heading.collapsed {
+	border: 1px solid #006CB2;
+	background-color: #FFFFFF;
+	color: #006CB2;
+}
+
+.panel-heading>h3 {
+	margin: 5px auto 10px auto;
+}
+
+h3.in-panel {
+	color: #FFFFFF;
+}
+
+.collapsed h3.in-panel {
+	color: #006CB2;
+}
+
+.panel-heading h3::after {
+	/* Want a white 'minus' symbol for "closed" panels */
+	font-family: 'Glyphicons Halflings';
+	/* essential for enabling glyphicon */
+	content: "\2212";
+	float: right;
+	color: #FFFFFF;
+}
+
+.panel-heading.collapsed h3::after {
+	/* Want a blue 'plus' symbol for "closed" panels, which have "collapsed" Bootstrap class applied */
+	content: "\2b";
+	color: #006CB2;
+}
+
+.form-control {
+	background-color: #F2F2F2;
+}
+
+#form-container h2 {
+	color: #006CB2;
+	font-weight: bold;
+}
+
+#form-submit {
+	margin-bottom: 20px;
+	border: 1px solid #006CB2;
+	background: none;
+}
+
+#form-submit:hover {
+	margin-bottom: 20px;
+	/*border: 1px solid #006CB2;*/
+	color: #FFFFFF;
+	background-color: #006CB2;
+}
+
+#footer-img-holder {
+	/*border-right: 5px solid #006CB2;*/
+}
+
+footer {
+	/*background-color: rgba(255, 253, 25, 0.5);*/
+	background-color: #F2F2F2;
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+footer h3 {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#department-health-logo {
+	/*Wanted Department of Health Logo to be left-aligned*/
+	/*	margin: 0 0 ;*/
+}
+
+div.social {
+	position: relative;
+	top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+a#back-to-top {
+	font-family: 'Source Sans Pro';
+	text-decoration: none;
+}
+
+.modal-header, .modal-footer {
+	background-color: #006CB2;
+	color: #FFFFFF;
+}
+
+.modal-logo {
+	margin: 0 auto;
+	height: 75px;
+	z-index: 100;
+	position: relative;
+	bottom: 25px;
+}
+
+.modal-footer .btn-outline {
+	background-color: #FFFFFF;
+	color: #006CB2;
+}
+
+.modal-footer .btn-outline:hover {
+	background-color: #FFFD19;
+	color: #353535;
+}
+
+@media only screen and (max-width: 770px) {
+	header {
+		min-height: 300px;
+	}
+	form {
+		font-size: 1.5em;
+	}
+	button#form-submit {
+		font-size: 1.5em;
+	}
+}
+
+@media only screen and (max-width: 315px) {
+	.container {
+		/*Next two declarations prevents text content overflowing parent container on very small screens*/
+		white-space: normal !important;
+		word-wrap: break-word;
+	}
+	body {
+		padding: 0px;
+	}
+	/*Removes element from under h1 of header to reduce cluttering*/
+	#under-header {
+		display: none;
+	}
+	header {
+		padding-bottom: 25px;
+		padding-left: 0px;
+	}
+	.header-overlay {
+		/*Set header-overlay to take up full width of header on small screen sizes*/
+		width: 100%;
+	}
+	#big-sign-up {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	header {
+		padding-top: 75px;
+	}
+	p {
+		/*font-size: 1.1em*/
+	}
+}
