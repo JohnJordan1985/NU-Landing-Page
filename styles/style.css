@@ -70,18 +70,30 @@ header {
 	background-size: cover;
 	/* adds a minimum height to the header so it's not relying on the content inside it */
 	min-height: 400px;
-	padding: 50px 0px 50px 25px;
+	padding: 0;
+	min-width: 100%;
 	height: 100%;
 	color: #FFFFFF;
 	line-height: 1.5;
 	border-bottom: 5px solid #006cb2;
 	margin-bottom: 40px;
+	position: relative;
 }
 
+h1 {
+	line-height: 200%;
+}
+/* Using pseudo-element to apply gradient */
+
+
 .header-overlay {
-	background-color: rgba(0, 108, 178, 0.75);
+	background-image: linear-gradient(to right, rgba(0, 108, 178, 0.75) 0%, rgba(0, 108, 178, 0.75) 45%, transparent);
+	/*background-color: rgba(0, 108, 178, 0.75);*/
+	padding-top: 50px;
+	height: 100%;
+	min-height: 400px; /* Same as header element */
 	/*#006cb2;*/
-	padding-top: 25px;
+	/*padding-top: 25px;*/
 }
 
 #under-header {
@@ -440,7 +452,7 @@ a#back-to-top {
 
 @media only screen and (max-width: 500px) {
 	header {
-		padding-top: 75px;
+		/*padding-top: 75px;*/
 	}
 	p {
 		/*font-size: 1.1em*/
